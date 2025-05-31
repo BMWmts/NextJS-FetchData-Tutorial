@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect } from "react";
+import Header from "@/components/Header";
 
 interface Data {
   id: number;
@@ -10,6 +11,11 @@ interface Data {
 export default function Home() {
 
   const [data, setData] = useState<Data[]>([]);
+  const myPlusFunction = (num1: number, num2: number): number => {
+    return num1 + num2;
+  }
+
+  const result = myPlusFunction(5, 10);
 
   console.log(data);
 
@@ -27,11 +33,13 @@ export default function Home() {
     };
 
     fetchData();
-    
+
   }, []);
 
   return (
     <main>
+      <Header title = 'NextJS + Typescript'/>
+      <p>My result: {result}</p>
       <ul>
         {data.map((item) => (
           <li key = {item.id}>

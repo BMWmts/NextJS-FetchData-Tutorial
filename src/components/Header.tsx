@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { FC } from 'react'
 
-function Header() {
-  return (
-    <div>Header</div>
-  )
+interface HeaderProps {
+  title: string;
 }
 
-export default Header
+const Header: FC<HeaderProps>  = ({ title }) => {
+  return (
+    <header>
+        <h1 className='text-3xl font-bold'>{title}</h1>
+    </header>
+  );
+;}
+
+export default Header;
