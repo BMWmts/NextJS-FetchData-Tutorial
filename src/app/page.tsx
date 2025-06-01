@@ -11,6 +11,9 @@ interface Data {
 export default function Home() {
 
   const [data, setData] = useState<Data[]>([]);
+  // const [firstName, setFirstName] = useState<string>('');
+  // const [lastName, setLastName] = useState<string>('');
+
   const myPlusFunction = (num1: number, num2: number): number => {
     return num1 + num2;
   }
